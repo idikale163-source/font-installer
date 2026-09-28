@@ -120,8 +120,9 @@ Git Trees API 是原子操作，一次提交全部文件，更快也更可靠。
 
 ## 📄 License
 
-MIT —— 随便用，随便改。
+[MIT License](LICENSE) © 2026 温语初
+
+随便用，随便改，随便发，保留版权声明即可。
 
 ---
-
 *Made with ♥ by Sully*

@@ -178,7 +178,15 @@ button.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
 /* ============================================================
    配置：模板文件内容（由部署时注入）
    ============================================================ */
-const TEMPLATES = window.__TEMPLATES__ || {};
+const TEMPLATES = (function(){
+  const el = document.getElementById('tpl-data');
+  if (!el) { console.error('tpl-data 未找到'); return {}; }
+  try {
+    const b64 = el.textContent.trim();
+    const json = decodeURIComponent(escape(atob(b64)));
+    return JSON.parse(json);
+  } catch(e) { console.error('模板解析失败:', e); return {}; }
+})();
 
 /* ============================================================
    工具
